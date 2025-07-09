@@ -1,15 +1,18 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Home from "@pages/Home";
 import Settings from "@pages/Settings";
-import Dashboard from "@layouts/Dashboard";
+import MainLayout from "@layouts/MainLayout";
 import NotFound from "@pages/NotFound";
+import Dashboard from "@pages/Dashboard"
+import WineLevel from "../pages/WineLevel";
 
 const Routers = () => {
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />}>
-        <Route index element={<Home />} />
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<Dashboard />} />
         <Route path="settings" element={<Settings />} />
+        <Route path="wine-level" element={<WineLevel />} />
+
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
